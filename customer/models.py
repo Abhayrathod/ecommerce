@@ -82,6 +82,11 @@ class Shipper(models.Model):
             MaxValueValidator(9999)
     ])
 
+class Whishlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+
+
 #------------------------Shopping cart models–----------------------
 
 class Order(models.Model):
@@ -93,9 +98,10 @@ class Order(models.Model):
     shipping_charge = models.FloatField()
     total = models.FloatField()
     discount = models.FloatField()
+    coupon_code = models.ForeignKey(VoucherCode, on_delete=models.CASCADE)
     grand_total = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=False)
-
+    updated_at = models.DateTimeField(auto_now_add=True)
 
 class OrderItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -135,3 +141,19 @@ class Transaction(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
     updated_at = models.DateTimeField(auto_now_add=True)
     context = models.TextField(blank=True)
+
+# class Transactions(models.Model):
+#     txn_id = models.CharField(max_length=50, null=False)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+#     order = models.ForeignKey(Orders, on_delete=models.CASCADE)
+#     amount = models.FloatField(null=False, blank=True)
+#     other_charges = models.FloatField(null=False, blank=True)
+#     tax = models.FloatField(null=False, blank=True)
+#     response = models.CharField(max_length=250, null=False)
+#     response = models.CharField(max_length=15, null=False)
+#     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
+#     updated_at = models.DateTimeField(auto_now_add=True)
+    
+#     def __str__(self):
+#         return self.txn_id

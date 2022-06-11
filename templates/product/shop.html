@@ -1,29 +1,19 @@
-{% load static %}<!DOCTYPE html>
-<!-- This site was created in Webflow. http://www.webflow.com --><!-- Last Published: Thu Mar 11 2021 02:43:16 GMT+0000 (Coordinated Universal Time) -->
-<html
-  data-wf-domain="bella-template.webflow.io"
-  data-wf-page="5c78e314be5f9ff9620593ad"
-  data-wf-site="5c78e314be5f9f28e205939c"
->
-  <!-- Mirrored from bella-template.webflow.io/shop by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 May 2022 11:28:55 GMT -->
-  <head>
-    <meta charset="utf-8" />
-    <title>Bella - Webflow E-Commerce Website Template</title>
-    <meta
-      content="Bella - Webflow E-Commerce Website Template"
-      property="og:title"
-    />
-    <meta
-      content="Bella - Webflow E-Commerce Website Template"
-      property="twitter:title"
-    />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Webflow" name="generator" />
-    <link
-      href="{% static '/css/style.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
+{% extends './partials/base.html' %}
+{% block inside_html %}
+data-wf-domain="bella-template.webflow.io"
+data-wf-page="5c78e314be5f9ff9620593ad"
+data-wf-site="5c78e314be5f9f28e205939c"
+{% endblock %}
+{% load static %}
+{% block title %}Shop{% endblock %}
+{% block meta %}
+<meta content="Bella - Webflow E-Commerce Website Template" property="og:title"/>
+<meta content="Bella - Webflow E-Commerce Website Template" property="twitter:title"/>
+{% endblock %}
+{% block style %}
+{% endblock %}
+{% block body %}
+{% endblock %}
     <style>
       @media (min-width: 992px) {
         html.w-mod-js:not(.w-mod-ix)

@@ -7,18 +7,18 @@
                 <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
                 <div>Shop</div>
             </div>
-            <nav class="dropdown-list w-dropdown-list"><a href="{% url 'shop-index' %}" class="dropdown-link w-dropdown-link">All Items</a>
+            <nav class="dropdown-list w-dropdown-list"><a href="{% url 'shop' %}" class="dropdown-link w-dropdown-link">All Items</a>
                 <div class="w-dyn-list">
                     <div role="list" class="w-dyn-items">
-                        <div role="listitem" class="w-dyn-item"><a href="category/accessories.html" class="dropdown-link w-dropdown-link">Accessories</a></div>
-                        <div role="listitem" class="w-dyn-item"><a href="category/apparel.html" class="dropdown-link w-dropdown-link">Apparel</a></div>
-                        <div role="listitem" class="w-dyn-item"><a href="category/perfume.html" class="dropdown-link w-dropdown-link">Perfume</a></div>
-                        <div role="listitem" class="w-dyn-item"><a href="category/shoes" class="dropdown-link w-dropdown-link">Shoes</a></div>
+                        <div role="listitem" class="w-dyn-item"><a href="{% url 'accessories' %}" class="dropdown-link w-dropdown-link">Accessories</a></div>
+                        <div role="listitem" class="w-dyn-item"><a href="{% url 'apparel' %}" class="dropdown-link w-dropdown-link">Apparel</a></div>
+                        <div role="listitem" class="w-dyn-item"><a href="{% url 'perfume' %}" class="dropdown-link w-dropdown-link">Perfume</a></div>
+                        <div role="listitem" class="w-dyn-item"><a href="{% url 'shoes' %}" class="dropdown-link w-dropdown-link">Shoes</a></div>
                     </div>
                 </div>
             </nav>
         </div><a href="blog" class="nav-link w-nav-link">Blog</a><a href="about.html" class="nav-link w-nav-link">About</a><a href="contact.html" class="nav-link w-nav-link">Contact</a>
-        <div class="nav-menu-small"><a href="#" data-w-id="d293350f-a4f0-8619-e533-207a829b959e" class="nav-link-small subscribe-link w-nav-link">Subscribe</a><a href="faq" class="nav-link-small w-nav-link">FAQ</a></div>
+        <div class="nav-menu-small"><a href="#" data-w-id="d293350f-a4f0-8619-e533-207a829b959e" class="nav-link-small subscribe-link w-nav-link">Subscribe</a><a href="{% url 'faq' %}" class="nav-link-small w-nav-link">FAQ</a></div>
     </nav>
     <div class="nav-info">
         <form action="https://bella-template.webflow.io/search" class="search-form w-form">
