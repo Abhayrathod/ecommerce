@@ -1,7 +1,8 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User
-from product.models import Product
+from product.models import Product, VoucherCode
+
 
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,6 +21,7 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = 'Address'
 
+
 class BillingAddress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     b_city = models.CharField(max_length=50, null=False)
@@ -36,6 +38,7 @@ class BillingAddress(models.Model):
 
     class Meta:
         verbose_name_plural = 'BillingAddress'
+
 
 class ShippingAddress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -54,6 +57,7 @@ class ShippingAddress(models.Model):
     class Meta:
         verbose_name_plural = 'ShippingAddress'
 
+
 class Credit_Card(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     creditcard_type = models.CharField(max_length=25, null=False)
@@ -70,9 +74,11 @@ class Credit_Card(models.Model):
     ]
     )
 
+
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     payment_type = models.CharField(max_length=50,null=False)
+
 
 class Shipper(models.Model):    
     company_name = models.CharField(max_length=50,  null=False)
@@ -81,6 +87,7 @@ class Shipper(models.Model):
             MinValueValidator(0000),
             MaxValueValidator(9999)
     ])
+
 
 class Whishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -103,6 +110,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
     updated_at = models.DateTimeField(auto_now_add=True)
 
+
 class OrderItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.BigIntegerField(null=False)
@@ -115,9 +123,11 @@ class OrderItem(models.Model):
     updated_at = models.DateTimeField(auto_now_add=True)
     context = models.TextField(blank=True)
 
+
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=False)
+
 
 class Cart_item(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -130,6 +140,7 @@ class Cart_item(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
     updated_at = models.DateTimeField(auto_now_add=False)
     content = models.TextField(blank=True)
+
 
 class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

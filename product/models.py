@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from ckeditor.fields import RichTextField
-from utils import create_new_ref_number
+# from utils import create_new_ref_number
 
 
 class Supplier(models.Model):
@@ -112,7 +112,7 @@ class Product(models.Model):
         blank=True,
         editable=False,
         unique=True,
-        default=create_new_ref_number(10)
+        # default=create_new_ref_number(10)
     )
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -143,7 +143,7 @@ class VoucherCode(models.Model):
         blank=True,
         editable=True,
         unique=True,
-        default=create_new_ref_number(8)
+        # default=create_new_ref_number(8)
     )
     discount_amount = models.FloatField(null=False, blank=True)
     discount_perc = models.FloatField(null=False, blank=True)
