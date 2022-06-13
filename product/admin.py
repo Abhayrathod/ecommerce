@@ -1,7 +1,7 @@
 from gc import collect
 import imp
 from django.contrib import admin
-from .models import Category, Brand, Collection, Product, ProductReview, Supplier, Base_relation_table, Tag, Type, ProductImages, VoucherCode
+from .models import *
 
 # Register your models here.
 admin.site.register(Category)

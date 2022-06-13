@@ -3,7 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 def shop(request):
     return render(request,'product/shop.html')
-def accessories(request):
+def accessories(request,slug):
+    print('*'*50)
+    print(slug)
     return render(request,'product/accessories.html')
 def apparel(request):
     return render(request,'product/apparel.html')
