@@ -106,7 +106,7 @@ class Product(models.Model):
     summary = models.TextField(blank=True)
     quantity = models.SmallIntegerField(null=False)
     type = models.ForeignKey(Type,  on_delete=models.SET_NULL, null=True)
-    tags = models.ManyToManyField(Tag, null=False)
+    tags = models.ManyToManyField(Tag)
     sku = models.CharField(
         max_length=10,
         blank=True,

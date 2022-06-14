@@ -1,5 +1,6 @@
+from hashlib import new
 from django.contrib import admin
-from .models import Address, BillingAddress, ShippingAddress, Credit_Card, Payment, Shipper, Order, OrderItem, Cart, Cart_item, Transaction
+from .models import *
 # Register your models here.
 admin.site.register(Address)
 admin.site.register(BillingAddress)
@@ -12,3 +13,4 @@ admin.site.register(OrderItem)
 admin.site.register(Cart)
 admin.site.register(Cart_item)
 admin.site.register(Transaction)
+admin.site.register(demo)

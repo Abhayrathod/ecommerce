@@ -1,6 +1,10 @@
 import json
+from logging.handlers import QueueListener
 from django.shortcuts import render
 from customer.controller import *
+from rest_framework import viewsets
+from .serializers import test_Serializers
+from .models import Address
 
 # Create your views here.
 def index(request):
@@ -24,3 +28,8 @@ def contact(request):
 
 def blog(request):
     return render(request,'blog.html')
+
+
+class Serializers_viewsets(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = test_Serializers

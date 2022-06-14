@@ -168,3 +168,14 @@ class Transaction(models.Model):
     
 #     def __str__(self):
 #         return self.txn_id
+
+
+class demo(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural = 'demo'
+
+    def __str__(self):
+        return self.title
