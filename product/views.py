@@ -4,8 +4,6 @@ from django.shortcuts import render
 def shop(request):
     return render(request,'product/shop.html')
 def accessories(request,slug):
-    print('*'*50)
-    print(slug)
     return render(request,'product/accessories.html')
 def apparel(request):
     return render(request,'product/apparel.html')
